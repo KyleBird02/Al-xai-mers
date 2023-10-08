@@ -1,13 +1,162 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Dementia Prediction</title>
-    </head>
-    <body>
-        <h1>Dementia Prediction</h1>
-        <form method="POST" enctype="multipart/form-data">
-            <input type="file" name="file" accept=".jpg, .jpeg" />
-            <input type="submit" value="Upload and Predict" />
-        </form>
-    </body>
+
+<head>
+    <title>Dementia Prediction</title>
+    <style>
+        @import url("https://fonts.googleapis.com/css?family=Poppins");
+
+        * {
+            font-family: 'Poppins';
+            overflow: hidden;
+        }
+
+        .main-header {
+            width: 100vw;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            min-height: 12vh;
+            font-family: "Poppins", sans-serif;
+            color: white;
+            font-size: 20px;
+            font-weight: 400;
+        }
+
+        .nav-list {
+            display: flex;
+            justify-content: space-around;
+            width: 60%;
+            list-style-type: none;
+            text-emphasis: none;
+        }
+
+        a {
+            text-decoration: none;
+            color: #162F6A;
+        }
+
+        .nav-list-item {
+            font-size: 18px;
+        }
+
+        a:hover {
+            text-decoration: underline;
+            text-decoration-thickness: 2px;
+            text-underline-offset: 5px;
+        }
+
+        .sign-in-btn {
+            background: #162F6A;
+            color: #ffffff;
+            border: 1px solid #162F6A;
+            border-radius: 12px;
+            width: 12vw;
+            height: 53px;
+            font-size: 20px;
+            font-weight: 400;
+        }
+
+        .sign-in-btn:hover {
+            background-color: #ff7505;
+            color: white;
+            border: 1px solid #ff7505;
+            cursor: pointer;
+        }
+
+        .logo {
+            font-size: 35px;
+            font-weight: 700;
+        }
+
+        .diff {
+            text-decoration: none;
+            color: black;
+        }
+
+        /* Added styles for 2-column layout */
+        .container {
+            display: flex;
+            justify-content: space-between;
+            margin: 20px 0;
+        }
+
+        .left-column {
+            width: 45%;
+            margin-left: 10%;
+            margin-top: 8%;
+            margin-right: 10%;
+        }
+
+        .right-column {
+            width: 38%;
+            /* Adjust as needed */
+        }
+        .sign-in-btn {
+            background: #162F6A;
+            color: #ffffff;
+            border: 1px solid #162F6A;
+            border-radius: 12px;
+            width: 12vw;
+            height: 53px;
+            font-size: 20px;
+            font-weight: 400;
+        }
+
+        .sign-in-btn:hover {
+            background-color: #ff7505;
+            color: white;
+            border: 1px solid #ff7505;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main-header">
+        <nav>
+            <li class="logo">
+                <a href="#home"><span class="diff">Mind</span>Scan</a>
+            </li>
+            <ul class="nav-list">
+                <li class="nav-list-item">
+                    <a href="#home">Home</a>
+                </li>
+                <li class="nav-list-item">
+                    <a href="#about">
+                        About <span class="orange-text">Us</span>
+                    </a>
+                </li>
+                <li class="nav-list-item">
+                    <a href="#team">
+                        Our <span class="orange-text">Team</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="container">
+        <div class="left-column">
+            <h1><span style="font-weight: bold;">MRI Image Analysis</span></h1>
+            <p>Upload your MRI image to predict dementia. Make sure that the image uploaded is in the png/jpg format and
+                that it is clear to provide optimum inputs to the model for accurate predictions.</p>
+            <form method="POST" enctype="multipart/form-data">
+                <input type="file" name="file" accept=".jpg, .jpeg" />
+                <input type="submit" value="Upload and Predict" />
+                <!-- <button class="sign-in-btn">
+                    Try it Out
+                </button> -->
+            </form>
+        </div>
+
+        <div class="right-column">
+            <img src="{{ url_for('static', filename='ill.jpg') }}" alt="Dementia Image" style=" height: 16%;">
+        </div>
+    </div>
+</body>
+
 </html>
