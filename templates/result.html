@@ -9,7 +9,6 @@
 
     * {
         font-family: 'Poppins';
-        overflow: hidden;
     }
 
     .main-header {
@@ -143,9 +142,14 @@
     <div class="container">
         <div class="left-column">
             <h1>Result</h1>
-            <img src="data:image/jpeg;base64, {{ image }}" alt="Uploaded Image" />
+            {% if image %}
+                <img src="data:image/jpeg;base64, {{ image }}" alt="Uploaded Image" />
+            {% endif %}
+            {% if lime_image %}
+                <img src="data:image/jpeg;base64, {{ lime_image }}" alt="LIME Explanation" />
+            {% endif %}
             <p class="predicted-text">Predicted Class: <span class="predicted-text {{ predicted_class|lower }}">{{
-                    predicted_class }}</span>
+                predicted_class }}</span>
             </p>
             <button onclick="reloadPage()">Submit Another MRI</button>
 

@@ -146,10 +146,8 @@
                 that it is clear to provide optimum inputs to the model for accurate predictions.</p>
             <form method="POST" enctype="multipart/form-data">
                 <input type="file" name="file" accept=".jpg, .jpeg" />
-                <input type="submit" value="Upload and Predict" />
-                <!-- <button class="sign-in-btn">
-                    Try it Out
-                </button> -->
+                <input type="submit" name="ml_predict" value="Upload and Predict" />
+                <input type="submit" name="lime_predict" value="Predict using XAI" />
             </form>
         </div>
 
